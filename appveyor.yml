@@ -2,8 +2,8 @@
 #cache:
 #- "c:\\sr" # stack root, short paths == fewer problems
 cache:
-- "C:\\sr"
-- "C:\\stack\\.stack-work"
+#- "C:\\sr"
+- "C:\\stack\\\.stack-work"
 
 build: off
 
@@ -11,13 +11,14 @@ platform:
 - x64
 
 before_test:
-- curl -ostack.zip -L --insecure https://www.stackage.org/stack/windows-x86_64
-- 7z x stack.zip stack.exe
+#- curl -ostack.zip -L --insecure https://www.stackage.org/stack/windows-x86_64
+#- 7z x stack.zip stack.exe
+- choco install haskell-stack
 
 clone_folder: "c:\\stack"
-environment:
-  global:
-    STACK_ROOT: "c:\\sr"
+#environment:
+#  global:
+#    STACK_ROOT: "c:\\sr"
 
 test_script:
 - stack setup > nul
