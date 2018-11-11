@@ -4,8 +4,11 @@
 
 build: off
 
+platform:
+- x64
+
 before_test:
-- curl -ostack.zip -L --insecure http://www.stackage.org/stack/windows-i386
+- curl -ostack.zip -L --insecure https://www.stackage.org/stack/windows-x86_64
 - 7z x stack.zip stack.exe
 
 clone_folder: "c:\\stack"
